@@ -1,0 +1,16 @@
+good to know:
+
+This usually does it for mongo:
+$ D:\mongodb\bin\    mongod -dbpath data/db
+
+
+How to get to the DB:
+1. D:\mongodb\bin\mongo
+2. show dbs
+3. show collections
+4. use node-mongo-blog
+5. show collections
+6. db.articles.find().pretty()
+
+test object id:
+ObjectId("53af51a86a9b1d4c1cbae6d8")

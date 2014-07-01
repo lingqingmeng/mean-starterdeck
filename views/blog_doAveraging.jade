@@ -1,0 +1,13 @@
+extends alternatelayout
+body
+    block content
+        h1= title
+        form( method="post")
+            select#editCommentScore(name='startscore')
+                option(value='15') 15
+                option(value='20') 20
+            select#editCommentScore(name='anotherstartscore')
+                option(value='21') 21
+                option(value='24') 24
+            div#editArticleSubmit
+                input(type="submit", value="Send")

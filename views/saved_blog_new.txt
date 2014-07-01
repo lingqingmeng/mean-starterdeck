@@ -1,0 +1,28 @@
+extends alternatelayout
+body
+    block content
+        h1= title
+        form( method="post")
+            .form-horizontal
+                div
+                    .col-lg-10
+                        div
+                            span Title :
+                                .form-group
+                                    label.control-label(for='focusedInput')
+                                    .col-lg-10
+                                        input(type="text", name="title", id="editArticleTitle")
+                        div
+                            span Body :
+                                .form-group
+                                    label.control-label(for='focusedInput')
+                                    .col-lg-10
+                                        textarea( name="body", rows=20, id="editArticleBody")
+                        div
+                            span Startscore :
+                                .form-group
+                                    label.control-label(for='focusedInput')
+                                    .col-lg-10
+                                        textarea( name="startscore", rows=1, id="editCommentScore")
+                        div#editArticleSubmit
+                            input(type="submit", value="Send")

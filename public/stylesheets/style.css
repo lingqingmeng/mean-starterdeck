@@ -1,0 +1,32 @@
+body {
+  font-family: "Helvetica Neue", "Lucida Grande", "Arial";
+  font-size: 14px;
+  text-align: center;
+  color: #555;
+  background-color: #eee;
+  padding-top: 50px;
+  padding-bottom: : 20px;}
+
+.body {
+  min-height: 500px;}
+
+hr {
+  border-top: 1px solid #aaa;;}
+
+.bold  {
+  font-weight: bold ;}
+
+.post-idx {
+  max-width: 300px;
+  padding: 20px;
+  margin-left: auto;
+  margin-right: auto;}
+
+.post-view {
+  padding: 20px 10px 20px 10px;}
+
+.comment-show {
+  max-width: 250px;
+  padding: 20px;
+  margin-left: auto;
+  margin-right: auto;}

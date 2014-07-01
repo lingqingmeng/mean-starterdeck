@@ -1,0 +1,54 @@
+extends alternatelayout
+body
+    block content
+        h1= 'Reviews'
+        div.article
+            div    
+                h6      
+                    div.created_at= article.created_at
+                div.jumbotron
+                    h1
+                        div.title= article.title
+                    p
+                        div.body= 'Restaurant Description for ' + title + ': ' + article.body + '.'
+                    p
+                        displaying Average Rating: 
+                        button.btn.btn-warning
+                            div.avscore= article.rating
+            div.list-group
+                - each comment in article.comments
+                    div.list-group-item
+                      div.comment
+                          blockquote
+                            p
+                                div.comment= comment.comment
+                            small
+                              b
+                                div.person= comment.person
+                              div.score= 'User Rating: ' + comment.score
+            div
+              form(role='form' method="post", action="/blog/addComment")
+                 div.list-group
+                    input( type="hidden", name="_id", value=article._id.toHexString())
+                    div.list-group-item
+                      dt 
+                        span Username :
+                      dd
+                        input( type="text", name="person", id="addCommentPerson")
+                    div.list-group-item
+                      dt
+                        span Remark :
+                      dd
+                        textarea( name="remark", rows=5, id="addCommentRemark")
+                    div.list-group-item
+                      dt
+                        span Score :
+                      dd
+                        select#addCommentScore(name='score')
+                            option(value='1') 1
+                            option(value='2') 2
+                            option(value='3') 3
+                            option(value='4') 4
+                            option(value='5') 5
+                    div#editArticleSubmit
+                      input(type="submit", value="Send")

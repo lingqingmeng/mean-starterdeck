@@ -1,0 +1,22 @@
+extends layout
+block content
+    h1= title
+    #articles
+        div.list-group
+        - each article in articles
+            
+            div.list-group-item
+              div.article
+                div
+                    div.title
+                        a(href="/blog/"+article._id)!= article.title
+                    div.body= article.body
+                div.rating= 'rating: ' + article.rating
+                div.created_at= article.created_at
+                form( method="post", action="/blog/:id/delete")
+                      input(name="_id", type="hidden", value=article._id.toHexString())
+                      input(id="delete", value="Delete", type="submit")
+                form( method="get", action="/blog/:id/edit")
+                      input(name ="_id", type="hidden", value=article._id.toHexString())
+                      input(id="edit", value="edit", type="submit")
+                
